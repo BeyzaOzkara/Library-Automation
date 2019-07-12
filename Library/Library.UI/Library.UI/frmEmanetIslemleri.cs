@@ -38,6 +38,19 @@ namespace Library.UI
                 }
                 var message = success ? "done" : "failed";
 
+                try
+                {
+                    using (var emanetBusiness = new EmanetBusiness())
+                    {
+                        List<Emanet> emanet = emanetBusiness.Listele().OrderBy(x => x.BarkodNo).ToList();
+                        dataGrid_Emanet.DataSource = emanet.ToList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error happened: " + ex.Message);
+                }
+
                 MessageBox.Show("Operation " + message);
             }
             catch (Exception ex)
@@ -45,18 +58,6 @@ namespace Library.UI
                 MessageBox.Show("Error happened: " + ex.Message);
             }
 
-            try
-            {
-                using (var emanetBusiness = new EmanetBusiness())
-                {
-                    List<Emanet> emanet = emanetBusiness.Listele().OrderBy(x => x.BarkodNo).ToList();
-                    dataGrid_Emanet.DataSource = emanet.ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error happened: " + ex.Message);
-            }
         }
 
         private void txtUyeID_KeyPress(object sender, KeyPressEventArgs e)
