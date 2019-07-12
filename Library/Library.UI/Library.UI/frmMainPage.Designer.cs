@@ -36,7 +36,7 @@
             // btnKitapİslemleri
             // 
             this.btnKitapİslemleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnKitapİslemleri.Location = new System.Drawing.Point(78, 95);
+            this.btnKitapİslemleri.Location = new System.Drawing.Point(75, 64);
             this.btnKitapİslemleri.Name = "btnKitapİslemleri";
             this.btnKitapİslemleri.Size = new System.Drawing.Size(103, 104);
             this.btnKitapİslemleri.TabIndex = 0;
@@ -47,7 +47,7 @@
             // btnUyeIslemleri
             // 
             this.btnUyeIslemleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnUyeIslemleri.Location = new System.Drawing.Point(187, 95);
+            this.btnUyeIslemleri.Location = new System.Drawing.Point(184, 64);
             this.btnUyeIslemleri.Name = "btnUyeIslemleri";
             this.btnUyeIslemleri.Size = new System.Drawing.Size(103, 104);
             this.btnUyeIslemleri.TabIndex = 1;
@@ -57,20 +57,22 @@
             // 
             // btnEmanetİslemleri
             // 
-            this.btnEmanetİslemleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEmanetİslemleri.Location = new System.Drawing.Point(296, 95);
+            this.btnEmanetİslemleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEmanetİslemleri.Location = new System.Drawing.Point(293, 64);
             this.btnEmanetİslemleri.Name = "btnEmanetİslemleri";
             this.btnEmanetİslemleri.Size = new System.Drawing.Size(103, 104);
             this.btnEmanetİslemleri.TabIndex = 2;
             this.btnEmanetİslemleri.Text = "EMANET İŞLEMLERİ";
             this.btnEmanetİslemleri.UseVisualStyleBackColor = false;
+            this.btnEmanetİslemleri.Click += new System.EventHandler(this.btnEmanetİslemleri_Click);
             // 
             // frmMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(476, 295);
+            this.BackgroundImage = global::Library.UI.Properties.Resources.Elegant_Background_3_1200x675;
+            this.ClientSize = new System.Drawing.Size(474, 236);
             this.Controls.Add(this.btnEmanetİslemleri);
             this.Controls.Add(this.btnUyeIslemleri);
             this.Controls.Add(this.btnKitapİslemleri);

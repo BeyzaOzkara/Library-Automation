@@ -34,8 +34,8 @@
             this.lblBarkodNo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateVerilis = new System.Windows.Forms.DateTimePicker();
+            this.dateTeslim = new System.Windows.Forms.DateTimePicker();
             this.dataGrid_Emanet = new System.Windows.Forms.DataGridView();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -47,7 +47,10 @@
             this.btnBarkodAra = new System.Windows.Forms.Button();
             this.txtBarkodNoAra = new System.Windows.Forms.TextBox();
             this.lblTeslimDurumu = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxDurum = new System.Windows.Forms.CheckBox();
+            this.btnListele = new System.Windows.Forms.Button();
+            this.lblEmanetID = new System.Windows.Forms.Label();
+            this.txtEmanetID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Emanet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +60,7 @@
             this.txtUyeID.Name = "txtUyeID";
             this.txtUyeID.Size = new System.Drawing.Size(100, 20);
             this.txtUyeID.TabIndex = 0;
+            this.txtUyeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUyeID_KeyPress);
             // 
             // txtBarkodNo
             // 
@@ -64,6 +68,7 @@
             this.txtBarkodNo.Name = "txtBarkodNo";
             this.txtBarkodNo.Size = new System.Drawing.Size(100, 20);
             this.txtBarkodNo.TabIndex = 1;
+            this.txtBarkodNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarkodNo_KeyPress);
             // 
             // lblUyeID
             // 
@@ -101,33 +106,33 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "TESLİM TARİHİ";
             // 
-            // dateTimePicker1
+            // dateVerilis
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 95);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dateVerilis.Location = new System.Drawing.Point(131, 95);
+            this.dateVerilis.Name = "dateVerilis";
+            this.dateVerilis.Size = new System.Drawing.Size(200, 20);
+            this.dateVerilis.TabIndex = 8;
             // 
-            // dateTimePicker2
+            // dateTeslim
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(131, 121);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 9;
+            this.dateTeslim.Location = new System.Drawing.Point(131, 121);
+            this.dateTeslim.Name = "dateTeslim";
+            this.dateTeslim.Size = new System.Drawing.Size(200, 20);
+            this.dateTeslim.TabIndex = 9;
             // 
             // dataGrid_Emanet
             // 
             this.dataGrid_Emanet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_Emanet.Location = new System.Drawing.Point(32, 186);
+            this.dataGrid_Emanet.Location = new System.Drawing.Point(34, 225);
             this.dataGrid_Emanet.Name = "dataGrid_Emanet";
-            this.dataGrid_Emanet.Size = new System.Drawing.Size(605, 150);
+            this.dataGrid_Emanet.Size = new System.Drawing.Size(463, 86);
             this.dataGrid_Emanet.TabIndex = 10;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(261, 41);
+            this.btnKaydet.Location = new System.Drawing.Point(34, 187);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(58, 23);
+            this.btnKaydet.Size = new System.Drawing.Size(74, 23);
             this.btnKaydet.TabIndex = 11;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -135,7 +140,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(376, 41);
+            this.btnUpdate.Location = new System.Drawing.Point(114, 187);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 23);
             this.btnUpdate.TabIndex = 13;
@@ -144,23 +149,25 @@
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(325, 41);
+            this.btnSil.Location = new System.Drawing.Point(367, 174);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(45, 23);
+            this.btnSil.Size = new System.Drawing.Size(130, 23);
             this.btnSil.TabIndex = 14;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // txtUyeIDAra
             // 
-            this.txtUyeIDAra.Location = new System.Drawing.Point(567, 40);
+            this.txtUyeIDAra.Location = new System.Drawing.Point(441, 42);
             this.txtUyeIDAra.Name = "txtUyeIDAra";
             this.txtUyeIDAra.Size = new System.Drawing.Size(56, 20);
             this.txtUyeIDAra.TabIndex = 15;
+            this.txtUyeIDAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUyeIDAra_KeyPress);
             // 
             // btnUyeIDAra
             // 
-            this.btnUyeIDAra.Location = new System.Drawing.Point(493, 66);
+            this.btnUyeIDAra.Location = new System.Drawing.Point(367, 64);
             this.btnUyeIDAra.Name = "btnUyeIDAra";
             this.btnUyeIDAra.Size = new System.Drawing.Size(130, 23);
             this.btnUyeIDAra.TabIndex = 16;
@@ -170,7 +177,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(490, 43);
+            this.label3.Location = new System.Drawing.Point(364, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 17;
@@ -179,7 +186,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(490, 100);
+            this.label4.Location = new System.Drawing.Point(364, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 20;
@@ -187,7 +194,7 @@
             // 
             // btnBarkodAra
             // 
-            this.btnBarkodAra.Location = new System.Drawing.Point(493, 124);
+            this.btnBarkodAra.Location = new System.Drawing.Point(367, 119);
             this.btnBarkodAra.Name = "btnBarkodAra";
             this.btnBarkodAra.Size = new System.Drawing.Size(130, 23);
             this.btnBarkodAra.TabIndex = 19;
@@ -196,10 +203,11 @@
             // 
             // txtBarkodNoAra
             // 
-            this.txtBarkodNoAra.Location = new System.Drawing.Point(567, 98);
+            this.txtBarkodNoAra.Location = new System.Drawing.Point(441, 93);
             this.txtBarkodNoAra.Name = "txtBarkodNoAra";
             this.txtBarkodNoAra.Size = new System.Drawing.Size(56, 20);
             this.txtBarkodNoAra.TabIndex = 18;
+            this.txtBarkodNoAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarkodNoAra_KeyPress);
             // 
             // lblTeslimDurumu
             // 
@@ -210,22 +218,51 @@
             this.lblTeslimDurumu.TabIndex = 21;
             this.lblTeslimDurumu.Text = "DURUMU";
             // 
-            // checkBox1
+            // checkBoxDurum
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(131, 154);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(103, 17);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "TESLİM EDİLDİ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxDurum.AutoSize = true;
+            this.checkBoxDurum.Location = new System.Drawing.Point(131, 154);
+            this.checkBoxDurum.Name = "checkBoxDurum";
+            this.checkBoxDurum.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxDurum.TabIndex = 22;
+            this.checkBoxDurum.Text = "TESLİM EDİLDİ";
+            this.checkBoxDurum.UseVisualStyleBackColor = true;
+            // 
+            // btnListele
+            // 
+            this.btnListele.Location = new System.Drawing.Point(194, 187);
+            this.btnListele.Name = "btnListele";
+            this.btnListele.Size = new System.Drawing.Size(74, 23);
+            this.btnListele.TabIndex = 24;
+            this.btnListele.Text = "Listele";
+            this.btnListele.UseVisualStyleBackColor = true;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
+            // 
+            // lblEmanetID
+            // 
+            this.lblEmanetID.AutoSize = true;
+            this.lblEmanetID.Location = new System.Drawing.Point(364, 151);
+            this.lblEmanetID.Name = "lblEmanetID";
+            this.lblEmanetID.Size = new System.Drawing.Size(66, 13);
+            this.lblEmanetID.TabIndex = 27;
+            this.lblEmanetID.Text = "EMANET ID";
+            // 
+            // txtEmanetID
+            // 
+            this.txtEmanetID.Location = new System.Drawing.Point(441, 148);
+            this.txtEmanetID.Name = "txtEmanetID";
+            this.txtEmanetID.Size = new System.Drawing.Size(56, 20);
+            this.txtEmanetID.TabIndex = 25;
             // 
             // frmEmanetIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 348);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(542, 333);
+            this.Controls.Add(this.lblEmanetID);
+            this.Controls.Add(this.txtEmanetID);
+            this.Controls.Add(this.btnListele);
+            this.Controls.Add(this.checkBoxDurum);
             this.Controls.Add(this.lblTeslimDurumu);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBarkodAra);
@@ -237,8 +274,8 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.dataGrid_Emanet);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTeslim);
+            this.Controls.Add(this.dateVerilis);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblBarkodNo);
@@ -261,8 +298,8 @@
         private System.Windows.Forms.Label lblBarkodNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateVerilis;
+        private System.Windows.Forms.DateTimePicker dateTeslim;
         private System.Windows.Forms.DataGridView dataGrid_Emanet;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnUpdate;
@@ -274,6 +311,9 @@
         private System.Windows.Forms.Button btnBarkodAra;
         private System.Windows.Forms.TextBox txtBarkodNoAra;
         private System.Windows.Forms.Label lblTeslimDurumu;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxDurum;
+        private System.Windows.Forms.Button btnListele;
+        private System.Windows.Forms.Label lblEmanetID;
+        private System.Windows.Forms.TextBox txtEmanetID;
     }
 }

@@ -12,7 +12,7 @@ namespace Library.Models
     {
         [Key]
         [Column(Order = 1)]
-        [ForeignKey("Kitap")]
+        //[ForeignKey("Kitap")]
         public int EmanetID { get; set; }
         public int BarkodNo { get; set; }
         public int UyeID { get; set; }

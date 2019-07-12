@@ -51,6 +51,7 @@
             // txtKullaniciAdi
             // 
             this.txtKullaniciAdi.Location = new System.Drawing.Point(168, 179);
+            this.txtKullaniciAdi.MaxLength = 50;
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(151, 20);
             this.txtKullaniciAdi.TabIndex = 1;
@@ -108,6 +109,7 @@
             this.Controls.Add(this.lblKullaniciAdi);
             this.Controls.Add(this.txtKullaniciAdi);
             this.Controls.Add(this.pictureEdit1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";

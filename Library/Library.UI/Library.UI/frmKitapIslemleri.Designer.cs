@@ -77,6 +77,7 @@
             this.txtSayfaSayisi.Name = "txtSayfaSayisi";
             this.txtSayfaSayisi.Size = new System.Drawing.Size(100, 20);
             this.txtSayfaSayisi.TabIndex = 3;
+            this.txtSayfaSayisi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSayfaSayisi_KeyPress);
             // 
             // txtBasimYili
             // 
@@ -84,6 +85,7 @@
             this.txtBasimYili.Name = "txtBasimYili";
             this.txtBasimYili.Size = new System.Drawing.Size(100, 20);
             this.txtBasimYili.TabIndex = 4;
+            this.txtBasimYili.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBasimYili_KeyPress);
             // 
             // lblKitapAdi
             // 
@@ -145,6 +147,7 @@
             this.dataGridKitap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridKitap.Location = new System.Drawing.Point(277, 60);
             this.dataGridKitap.Name = "dataGridKitap";
+            this.dataGridKitap.ReadOnly = true;
             this.dataGridKitap.Size = new System.Drawing.Size(513, 213);
             this.dataGridKitap.TabIndex = 12;
             // 
@@ -173,6 +176,7 @@
             this.txtBarkodNo.Name = "txtBarkodNo";
             this.txtBarkodNo.Size = new System.Drawing.Size(40, 20);
             this.txtBarkodNo.TabIndex = 41;
+            this.txtBarkodNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarkodNo_KeyPress);
             // 
             // btnSil
             // 

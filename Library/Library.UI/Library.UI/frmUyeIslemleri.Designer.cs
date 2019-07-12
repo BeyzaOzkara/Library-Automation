@@ -105,9 +105,11 @@
             // txtUyeTcNo
             // 
             this.txtUyeTcNo.Location = new System.Drawing.Point(134, 105);
+            this.txtUyeTcNo.MaxLength = 11;
             this.txtUyeTcNo.Name = "txtUyeTcNo";
             this.txtUyeTcNo.Size = new System.Drawing.Size(100, 20);
             this.txtUyeTcNo.TabIndex = 16;
+            this.txtUyeTcNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUyeTcNo_KeyPress);
             // 
             // txtUyeSoyisim
             // 
@@ -115,6 +117,7 @@
             this.txtUyeSoyisim.Name = "txtUyeSoyisim";
             this.txtUyeSoyisim.Size = new System.Drawing.Size(100, 20);
             this.txtUyeSoyisim.TabIndex = 15;
+            this.txtUyeSoyisim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUyeSoyisim_KeyPress);
             // 
             // txtUyeIsim
             // 
@@ -122,13 +125,16 @@
             this.txtUyeIsim.Name = "txtUyeIsim";
             this.txtUyeIsim.Size = new System.Drawing.Size(100, 20);
             this.txtUyeIsim.TabIndex = 14;
+            this.txtUyeIsim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUyeIsim_KeyPress);
             // 
             // txtTC
             // 
             this.txtTC.Location = new System.Drawing.Point(134, 222);
+            this.txtTC.MaxLength = 11;
             this.txtTC.Name = "txtTC";
             this.txtTC.Size = new System.Drawing.Size(100, 20);
             this.txtTC.TabIndex = 27;
+            this.txtTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTC_KeyPress);
             // 
             // label1
             // 
@@ -165,6 +171,7 @@
             this.txtUyeID.Name = "txtUyeID";
             this.txtUyeID.Size = new System.Drawing.Size(40, 20);
             this.txtUyeID.TabIndex = 34;
+            this.txtUyeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUyeID_KeyPress);
             // 
             // lblUyeID
             // 

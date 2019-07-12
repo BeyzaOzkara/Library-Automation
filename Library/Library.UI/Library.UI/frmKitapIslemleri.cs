@@ -124,5 +124,20 @@ namespace Library.UI
                 MessageBox.Show("Error happened: " + ex.Message);
             }
         }
+
+        private void txtSayfaSayisi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceSayi(sender, e);
+        }
+
+        private void txtBasimYili_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceSayi(sender, e);
+        }
+
+        private void txtBarkodNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceSayi(sender, e);
+        }
     }
 }

@@ -28,5 +28,11 @@ namespace Library.UI
             frmUyeIslemleri ui = new frmUyeIslemleri();
             ui.Show();
         }
+
+        private void btnEmanetİslemleri_Click(object sender, EventArgs e)
+        {
+            frmEmanetIslemleri ei = new frmEmanetIslemleri();
+            ei.Show();
+        }
     }
 }

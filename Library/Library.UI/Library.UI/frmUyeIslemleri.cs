@@ -11,6 +11,7 @@ using Library.Models;
 using Library.DAL.Repositories.Concretes;
 using Library.BLL;
 using System.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 
 namespace Library.UI
 {
@@ -23,6 +24,48 @@ namespace Library.UI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtUyeIsim.Text) || string.IsNullOrEmpty(txtUyeSoyisim.Text))
+            {
+                throw new ValidationException("Kullanıcı Adı veya Şifre Boş Geçilemez !");
+            }
+            else
+            {
+                try
+                {
+                    bool success;
+                    using (var uyeBusiness = new UyeBusiness())
+                    {
+                        success = uyeBusiness.Ekle(new Uye()
+                        {
+                            Isim = txtUyeIsim.Text,
+                            Soyisim = txtUyeSoyisim.Text,
+                            TcNo = Convert.ToInt64(txtUyeTcNo.Text)
+                        });
+                    }
+                    var message = success ? "done" : "failed";
+
+
+                    try
+                    {
+                        using (var uyeBusiness = new UyeBusiness())
+                        {
+                            List<Uye> customers = uyeBusiness.Listele().OrderBy(x => x.UyeID).ToList();
+                            dataGrid_TumUye.DataSource = customers.ToList();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error happened: " + ex.Message);
+                    }
+                    MessageBox.Show("Operation " + message);
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error happened: " + ex.Message);
+                }
+            }
             try
             {
                 bool success;
@@ -125,6 +168,31 @@ namespace Library.UI
             {
                 MessageBox.Show("Error happened: " + ex.Message);
             }
+        }
+
+        private void txtUyeIsim_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceHarf(sender, e);
+        }
+
+        private void txtUyeSoyisim_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceHarf(sender, e);
+        }
+
+        private void txtUyeTcNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceSayi(sender, e);
+        }
+
+        private void txtTC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceSayi(sender, e);
+        }
+
+        private void txtUyeID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.SadeceSayi(sender, e);
         }
     }
 }
